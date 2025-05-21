@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    '@nuxt/eslint',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
     'nuxt-gtag',
@@ -39,13 +40,18 @@ export default defineNuxtConfig({
     lazy: true,
     baseUrl: process.env.BASE_URL,
   },
+  runtimeConfig: {
+    public: {
+      siteName: '', //TODO: Add your site name
+    },
+  },
   site: {
     url: process.env.BASE_URL,
     name: '',
   },
   gtag: {
     enabled: process.env.NODE_ENV === 'production',
-    id: 'G-XXXXXXXXXX',
+    id: 'G-XXXXXXXXXX', //TODO: Add your Google Analytics ID
   },
-  schemaOrg: {},
+  schemaOrg: {}, //TODO: Add schema.org configuration
 });
